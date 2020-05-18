@@ -1,0 +1,36 @@
+<h1>Stupid Coaching</h1>
+<% if params[:question].include?("?") %>
+<div class="container">
+<p><%= params[:question] %></p>
+<p class="agent">- You</p>
+</div>
+<div class="answer">
+<p><%= @answer2 %></p>
+<p class="agent">- Your coach</p>
+</div>
+​
+<% elsif params[:question] == "I am going to work" %>
+<div class="container">
+<p><%= params[:question] %></p>
+<p class="agent">- You</p>
+</div>
+<div class="answer">
+<p><%= @answer3 %></p>
+<p class="agent">- Your coach</p>
+</div>
+​
+<% else %>
+<div class="container">
+<p><%= params[:question] %></p>
+<p style="font-style: italic;">- You</p>
+</div>
+<div class="answer">
+<p><%= @answer1 %></p>
+<p class="agent">- Your coach</p>
+</div>
+<% end %>
+​
+<hr>
+<%= link_to "Ask another question", ask_path %>
+
+
